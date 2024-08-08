@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>insert_emp</h1>
+        <form  method="POST">
+            {% csrf_token %}
+            <label for="dept">Deptno</label>
+            <select name="dept" id="dept">
+                {% for eo in EMO %}
+                <option value="{{eo.deptno}}">{{eo.deptno}}</option>
+                {% endfor %}
+                </select><br><br>
+            <label for="empno">Empno</label>
+            <input type="number" name="empno" id="empno"><br><br>
+            <label for="ename">Ename</label>
+            <input type="text" name="ename" id="ename"><br><br>
+            <label for="job">Job</label>
+            <input type="text" name="job" id="job"><br><br>
+            <label for="sal">Salary</label>
+            <input type="number" name="sal" id="sal"><br><br>
+            <label for="comm">Comm</label>
+            <input type="text" name="comm" id="comm"><br><br>
+            <label for="hiredate">Hiredate</label>
+            <input type="date" name="hiredate" id="hiredate"><br><br>
+        
+            <label for="mgr">Mgr</label>
+            <input type="text" name="mgr" id="mgr">
+        </form>
+    </center>
+</body>
+</html>
